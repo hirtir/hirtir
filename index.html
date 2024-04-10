@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Интернет-магазин одежды</title>
+</head>
+<body>
+<header>
+<h1>Добро пожаловать в Интернет-магазин одежды</h1>
+</header>
+
+<div class="main-content">
+<div class="category1">
+<h2>Для детей</h2>
+<img src="kids-clothes.jpg" alt="Детская одежда">
+<p>Покупайте последние тенденции в детской моде</p>
+</div>
+
+<div class="category2">
+<h2>Для мужчин</h2>
+<img src="mens-clothes.jpg" alt="Мужская одежда">
+<p>Откройте для себя нашу стильную коллекцию для мужчин</p>
+</div>
+
+<div class="category3">
+<h2>Для женщин</h2>
+<img src="womens-clothes.jpg" alt="Женская одежда">
+<p>Найдите идеальный наряд для любого случая</p>
+</div>
+</div>
+
+<!-- <footer>
+<p>© 2023 Интернет-магазин одежды</p>
+<p>Создано Даниилом Микрюковым</p>
+</footer> -->
+
+
+<div>
+    <h1>Ask a Question</h1>
+    <form action="/submit" method="post">
+        <input type="text" name="question" placeholder="Your question here">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
