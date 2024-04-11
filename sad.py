@@ -1,36 +1,13 @@
 
-from flask import Flask, request, render_template
+from flask import Flask, request
 import requests
 
-app = Flask(__name__)
+app = Flask(name)
 
 # Здесь нужно указать ваш токен телеграм бота
 TELEGRAM_BOT_TOKEN = '7129981759:AAHsUg_LEBlAFWRopS4uY5APT3TPt2xTYKo'
 # Здесь нужно указать ваш chat_id в телеграм (можно узнать у @userinfobot)
 TELEGRAM_CHAT_ID = '-4175058493'
-# Здесь нужно указать URL вашего Flask приложения
-FLASK_APP_URL = 'https://hirtir.github.io/submit'
-
-def set_webhook():
-    url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setWebhook'
-    params = {
-        'url': FLASK_APP_URL + '/' + TELEGRAM_BOT_TOKEN
-    }
-    response = requests.post(url, params=params)  # Используем POST вместо GET
-    print(response.json())
-
-
-# Обработка главной страницы
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-# Обработка отправки формы
-@app.route('/submit', methods=['POST'])
-def submit():
-    question = request.form['question']
-    send_to_telegram(question)
-    return 'Question sent to Telegram!'
 
 # Функция отправки сообщения в Telegram
 def send_to_telegram(question):
@@ -41,24 +18,12 @@ def send_to_telegram(question):
     }
     requests.post(url, data=data)
 
-# Обработка входящих сообщений от Telegram
-@app.route(f'/{TELEGRAM_BOT_TOKEN}', methods=['POST'])
-def telegram_webhook():
-    update = request.json
-    chat_id = update['message']['chat']['id']
-    message_text = update['message']['text']
-    send_reply(chat_id, message_text)
-    return 'OK'
+# Обработка входящих сообщений от GitHub Pages
+@app.route('/submit', methods=['POST'])
+def submit():
+    question = request.form['question']
+    send_to_telegram(question)
+    return 'Question sent to Telegram!'
 
-# Функция отправки ответа в Telegram
-def send_reply(chat_id, message_text):
-    url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage'
-    data = {
-        'chat_id': chat_id,
-        'text': f'You said: {message_text}'
-    }
-    requests.post(url, data=data)
-
-if __name__ == '__main__':
-    set_webhook()  # Установка веб-хука перед запуском Flask приложения
-    app.run(debug=True)
+if name == 'main':
+    app.run(host='0.0.0.0', port=5000)
