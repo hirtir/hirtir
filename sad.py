@@ -16,7 +16,7 @@ def set_webhook():
     params = {
         'url': FLASK_APP_URL + '/' + TELEGRAM_BOT_TOKEN
     }
-    response = requests.get(url, params=params)
+    response = requests.post(url, params=params)  # Используем POST вместо GET
     print(response.json())
 
 
