@@ -9,7 +9,7 @@ TELEGRAM_BOT_TOKEN = '7129981759:AAHsUg_LEBlAFWRopS4uY5APT3TPt2xTYKo'
 # Здесь нужно указать ваш chat_id в телеграм (можно узнать у @userinfobot)
 TELEGRAM_CHAT_ID = '-4175058493'
 # Здесь нужно указать URL вашего Flask приложения
-FLASK_APP_URL = 'http://127.0.0.1:5000'
+FLASK_APP_URL = 'https://hirtir.github.io/submit'
 
 def set_webhook():
     url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setWebhook'
