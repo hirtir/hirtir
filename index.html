@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question Form</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="script.js"></script>
 </head>
 <body>
     
@@ -13,7 +14,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="C:\app\static\css\style.css">
 <title>Интернет-магазин одежды</title>
 </head>
 <body>
@@ -47,12 +48,22 @@
 </footer> -->
 
 
-<div>
-    <h1>Ask a Question</h1>
-    <form action="/submit" method="post">
-        <input type="text" name="question" placeholder="Your question here">
-        <button type="submit">Submit</button>
-    </form>
+
+
+<div id="question-form-container">
+    <div class="container">
+        <h1>Вопросы?</h1>
+        <form action="/submit" method="post">
+            <textarea name="question" rows="4" cols="50" placeholder="Ваш вопрос здесь"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
 </div>
+
+
+<div id="support-toggle">
+    <div class="circle"></div>
+  </div>
+</script>
 </body>
 </html>
