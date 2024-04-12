@@ -1,112 +1,107 @@
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F5F5F5; 
-    margin: 0;
-    padding: 0;
-    }
-    
-    header {
-    background-color: #fff;
-    text-align: center;
-    }
-    
-    .main-content {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    margin: 400px;
-    margin-top: 50px;
-    }
-    
-    .category1 {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 400px;
-    width: 275px;
-    }
-    
-    footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    text-align: center;
-    padding: 10px;
-    }
+header {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
 
-    .category1 p {
-        margin-top: 280px;
-      }
-      .category2 p {
-        margin-top: 280px;
-      }
-      .category3 p {
-        margin-top: 280px;
-      }
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
 
-      .category2 {
-        background-color: #fff;
-        padding: 20px;
-        text-align: center;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        height: 400px;
-       width: 275px;
-        }
+.category1,
+.category2,
+.category3 {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  width: 275px;
+}
 
-        .category3 {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            height: 400px;
-           width: 275px;
-            }
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+}
 
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+}
 
-            .support-chat {
-                background-color: #f2f2f2;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 10px;
-                max-width: 300px; /* Размеры блока подстраивайте под свои дизайнерские требования */
-              }
-              
-              .chat-messages {
-                min-height: 200px;
-                max-height: 300px;
-                overflow-y: scroll;
-                padding: 10px;
-                background-color: #fff;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                margin-bottom: 10px;
-              }
-              
-              .chat-input input {
-                width: calc(100% - 70px);
-                padding: 8px;
-                margin-right: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-              }
-              
-              .chat-input button {
-                padding: 6px 10px;
-                border: none;
-                background-color: #007bff;
-                color: #fff;
-                border-radius: 5px;
-                cursor: pointer;
-              }
-              
-              .chat-input button:hover {
-                background-color: #0056b3;
-              }
+textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+}
+
+button[type="submit"] {
+  margin-top: auto;
+  padding: 10px;
+  background-color: #00bfff; /* голубой цвет */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #009acd; /* изменение цвета при наведении */
+}
+
+#question-form-container {
+  position: fixed;
+  bottom: 20px;
+  right: calc(20px + 50px); /* Переместим окно поддержки на 50px влево от правого края */
+  z-index: 998; /* Устанавливаем z-index ниже кружка */
+  transition: right 0.3s ease; /* Плавное перемещение */
+}
+
+#support-toggle {
+  position: fixed;
+  bottom: 20px; /* Немного подвигаем кружок вверх */
+  right: 20px;
+  z-index: 999; /* Устанавливаем z-index выше окна поддержки */
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00bfff; /* Цвет кружка */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Анимация при наведении */
+  position: relative; /* Делаем позиционирование кружка относительным */
+  z-index: 1000; /* Устанавливаем z-index выше окна поддержки */
+}
+
+.circle:hover {
+  background-color: #009acd; /* Изменение цвета при наведении */
+}
